@@ -3,6 +3,7 @@
 Two .py file examples here. There are some prep steps to run this on your local machine. I'm purposefully using command line as this is the most simple version of these scripts.
 
 ---
+
 ## Prep to use Python and EE
 
 I'm running all of the following scripts in VCode. You can use other programs or any shell, but I can't guarantee you won't have to troubleshoot.
@@ -20,7 +21,7 @@ After you've done these once, you won't have to again. Make sure you close whate
 
 ---
 
-Authenticating and Testing GEE/Python scripts in VCode:
+## Authenticating and Testing GEE/Python scripts in VCode:
 
 In order to use the GEE python API, we need to authenticate our google access to GEE. This require a manual validation of your account. If you haven't already, you'll need to sign up for GEE access using your CSU-gmail address.
 > python3 a_authenticate.py
@@ -36,4 +37,13 @@ The matplotlib engine should open on your machine and show you a very simple x-y
 
 ---
 
-Simple <targets> workflow
+## Simple targets workflow
+
+It seems like the two easiest ways to run .py scripts are to:
+
+ (a) load 'reticulate' in the _targets.R file, make the file.py a target file, and use source_python(file.py)
+ (b) don't load 'reticulate' in _targets.R, rather make a simple function wrapper that uses the source_python()
+
+Note, tar_make() will hang until you close the matplotlib window in this particular workflow. 
+
+
