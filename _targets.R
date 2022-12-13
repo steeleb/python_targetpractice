@@ -42,7 +42,11 @@ list(
   ),
   tar_target(
     name = runPyMakeFeature,
-    command = pySource(pyMakeFeature)
+    command = source_python(pyMakeFeature)
+  ),
+  tar_target(
+   name = runPyMakeFeatureFunction,
+   command = pySource(pyMakeFeature)
   ),
   tar_target(
     name = pyPlotLocs,
@@ -51,6 +55,10 @@ list(
   ),
   tar_target(
     name = runPyPlotLocs,
+    command = source_python(pyPlotLocs) #note, tar_make will hang until you close the popup
+  ),
+  tar_target(
+    name = runPyPlotLocsFunction,
     command = pySource(pyPlotLocs) #note, tar_make will hang until you close the popup
   )
 )
