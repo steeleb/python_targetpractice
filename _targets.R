@@ -24,7 +24,7 @@ future::plan(future.callr::callr)
 # Run the R scripts in the R/ folder with your custom functions:
 lapply(list.files('R', full.names = T), source)
 tar_source()
-source('pySetup.R')
+# source('pySetup.Rmd')
 
 # source("other_functions.R") # Source other scripts as needed. # nolint
 
