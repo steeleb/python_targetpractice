@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # python_targetpractice
 
 Just a quick try at using `targets` to check and run python scripts.
