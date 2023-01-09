@@ -71,9 +71,11 @@ window.
 
 It seems like the two easiest ways to run .py scripts are to:
 
-(a) load 'reticulate' in the \_targets.R file, make the file.py a target
+approach 1: load `reticulate` in the \_targets.R file, make the file.py a target
     file, and use source_python(file.py)
-(b) don't load 'reticulate' in \_targets.R, rather make a simple
-    function wrapper that uses the source_python()
+approach 2: don't load `reticulate` in \_targets.R, rather make a simple
+    function wrapper that uses the `source_python()`
 
-In the `_targets.R` script, is an example of both of these methods. NOTE: tar_make() will hang until you close the matplotlib window in this particular workflow. 
+In the `_targets.R` script, there is an example of both of these methods. They are situated in the same target 'list' (lines 30 on), you can comment out the approaches to recreate the `targets::tar_visnetwork()` graphs using these two different approaches.
+
+NOTE: `targets::tar_make()` will hang until you close the matplotlib window in this particular workflow. 
