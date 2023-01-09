@@ -1,8 +1,13 @@
 # python_targetpractice
 
 Just a quick try at using `targets` to check and run python scripts.
-This will be needed to grab data using the GEE API scripts, here, we run
-a couple of quick .py scripts to test functionality.
+Here, we run a couple of quick .py scripts to test functionality within `targets`. This is
+in part a quick sanity check to see how to integrate python scripts into
+a `targets` workflow, since `targets` does not explicitly work with .py scripts.
+
+NOTE: This example
+uses the Earth Engine API as a test case for python interoperability within targets. 
+Earth Engine API requires an Earth Engine account.
 
 ------------------------------------------------------------------------
 
@@ -28,8 +33,7 @@ After you've done these once, you shouldn't have to again.
 
 In order to use the GEE python API, we need to authenticate our google
 access to GEE. This require a manual validation of your account. If you
-haven't already, you'll need to sign up for GEE access using your
-CSU-gmail address.
+haven't already, you'll need to sign up for GEE access using a gmail address.
 
 Using the .zsh terminal in R Studio, we'll now test to make sure our
 scripts are working. First, confirm that you are using a .zsh (not a
@@ -72,7 +76,4 @@ It seems like the two easiest ways to run .py scripts are to:
 (b) don't load 'reticulate' in \_targets.R, rather make a simple
     function wrapper that uses the source_python()
 
-In the `_targets.R` script, I try both of these methods.
-
-NOTE: tar_make() will hang until you close the matplotlib window in this
-particular workflow.
+In the `_targets.R` script, is an example of both of these methods. NOTE: tar_make() will hang until you close the matplotlib window in this particular workflow. 
