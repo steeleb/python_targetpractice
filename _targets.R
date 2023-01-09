@@ -24,11 +24,9 @@ future::plan(future.callr::callr)
 # Run the R scripts in the R/ folder with your custom functions:
 lapply(list.files('R', full.names = T), source)
 tar_source()
-# source('pySetup.Rmd')
+# source('pySetup.Rmd')s
 
-# source("other_functions.R") # Source other scripts as needed. # nolint
-
-# Replace the target list below with your own:
+#targets list - comparison of two approaches to python targets
 list(
  tar_target(
     name = locList,
@@ -40,25 +38,30 @@ list(
     command = 'b_loadlocs.py',
     format = 'file'
   ),
+ #approach 1
   tar_target(
     name = runPyMakeFeature,
     command = source_python(pyMakeFeature)
   ),
-  tar_target(
-   name = runPyMakeFeatureFunction,
-   command = pySource(pyMakeFeature)
-  ),
+ #approach 2
+  # tar_target(
+  #  name = runPyMakeFeatureFunction,
+  #  command = pySource(pyMakeFeature)
+  # ),
   tar_target(
     name = pyPlotLocs,
     command = 'c_plot.py',
     format = 'file'
   ),
+ #approach 1
   tar_target(
     name = runPyPlotLocs,
     command = source_python(pyPlotLocs) #note, tar_make will hang until you close the popup
-  ),
-  tar_target(
-    name = runPyPlotLocsFunction,
-    command = pySource(pyPlotLocs) #note, tar_make will hang until you close the popup
   )
+ # ,
+ #approach 2
+ # tar_target(
+ #   name = runPyPlotLocsFunction,
+ #   command = pySource(pyPlotLocs) #note, tar_make will hang until you close the popup
+ # )
 )
